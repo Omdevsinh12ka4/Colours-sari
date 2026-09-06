@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colours Saree | Exclusive Sarees in Rajkot</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="images.jpg" type="image/x-icon">
+    <style>
+        :root {
+            --bg-calm: #f4f6f0;
+            --accent-main: #800020;
+            --accent-soft: #a33851;
+            --text-dark: #2c3531;
+            --white: #ffffff;
+            --gray-light: #eaece6;
+            --discount-red: #d9534f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-calm);
+            color: var(--text-dark);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .top-bar {
+            background-color: var(--accent-main);
+            color: var(--white);
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+
+        .search-box {
+            position: relative;
+            width: 250px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 8px 12px 8px 35px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fafafa;
+            outline: none;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+
+        .brand-logo {
+            text-align: center;
+        }
+
+        .brand-logo h1 {
+            color: var(--accent-main);
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .brand-logo span {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #666;
+            display: block;
+        }
+
+        .user-icons {
+            display: flex;
+            gap: 20px;
+            font-size: 20px;
+            color: var(--text-dark);
+        }
+
+        .user-icons i:hover {
+            color: var(--accent-soft);
+            cursor: pointer;
+        }
+
+        nav {
+            border-top: 1px solid var(--gray-light);
+            background-color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 25px;
+            padding: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .nav-links li a {
+            font-weight: 600;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.2s;
+            padding: 5px 0;
+        }
+
+        .nav-links li a:hover {
+            color: var(--accent-soft);
+            border-bottom: 2px solid var(--accent-soft);
+        }
+
+        /* --- INTERACTIVE FILTER BAR --- */
+        .filter-bar {
+            background-color: #fcfdfa;
+            border: 1px solid #e2e5dc;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 20px auto 30px auto;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .filter-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: var(--white);
+            border: 1px solid #d1d5db;
+            padding: 8px 30px 8px 12px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #444;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .filter-select:hover, .filter-select:focus {
+            border-color: var(--accent-soft);
+        }
+
+        .filter-item::after {
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 10px;
+            color: #666;
+            position: absolute;
+            right: 12px;
+            pointer-events: none;
+        }
+
+        .sort-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- CIRCLE CATEGORIES --- */
+        .categories-section {
+            max-width: 1200px;
+            margin: 20px auto 20px auto;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .category-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .cat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 130px;
+            cursor: pointer;
+        }
+
+        .cat-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-soft);
+            padding: 3px;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .cat-item:hover .cat-img {
+            transform: scale(1.05);
+        }
+
+        .cat-item span {
+            margin-top: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--text-dark);
+        }
+
+        /* --- PRODUCTS SECTION --- */
+        .products-section {
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            scroll-margin-top: 120px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 24px;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--accent-soft);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .title-wrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .product-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            line-height: 1.4;
+            height: 36px;
+            overflow: hidden;
+        }
+
+        .price-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .product-price {
+            color: var(--text-dark);
+            font-weight: 800;
+            font-size: 15px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 13px;
+        }
+
+        .discount-tag {
+            color: var(--discount-red);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--accent-main);
+            color: var(--white);
+            padding-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 30px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-col h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--accent-soft);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .footer-col p, .footer-col li {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #f0e6e6;
+        }
+
+        .social-icons {
+            margin-top: 15px;
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .payment-icons {
+            margin-top: 10px;
+            font-size: 22px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body id="home">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="top-bar">
+        Save Min 50% on all orders and get free shipping across Rajkot!
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header>
+        <div class="header-main">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="searchInput" onkeyup="applyFilters()" placeholder="Search Sarees...">
+            </div>
+
+            <div class="brand-logo">
+                <a href="#home">
+                    <h1>Colours Saree</h1>
+                    <span>RAJKOT</span>
+                </a>
+            </div>
+
+            <div class="user-icons">
+                <i class="fa-regular fa-user"></i>
+                <i class="fa-regular fa-bag-shopping"></i>
+            </div>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CIRCULAR CATEGORIES -->
+    <section class="categories-section">
+        <div class="category-container">
+            <div class="cat-item" onclick="filterByCategory('cotton')">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=300&q=80" class="cat-img" alt="Cotton Weave">
+                <span>Cotton Weave</span>
+            </div>
+            <div class="cat-item" onclick="filterByCategory('silk')">
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=300&q=80" class="cat-img" alt="Silk Sarees">
+                <span>Silk Sarees</span>
+            </div>
+            <div class="cat-item" onclick="filterByCategory('handwork')">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=300&q=80" class="cat-img" alt="Handwork">
+                <span>Handwork Sarees</span>
+            </div>
+            <div class="cat-item" onclick="filterByCategory('ajrakh')">
+                <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=300&q=80" class="cat-img" alt="Ajrakh Print">
+                <span>Ajrakh Print</span>
+            </div>
+            <div class="cat-item" onclick="filterByCategory('chinon')">
+                <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=300&q=80" class="cat-img" alt="Beads & Mirrors">
+                <span>Beads & Mirrors</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE FILTER BAR -->
+    <div class="filter-bar">
+        <div class="filter-group">
+            <div class="filter-item">
+                <select id="typeFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="all">Product Type: All</option>
+                    <option value="cotton">Cotton Weave</option>
+                    <option value="silk">Silk Saree</option>
+                    <option value="handwork">Handwork & Beads</option>
+                    <option value="chinon">Chinon & Print</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <select id="sizeFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="all">Size: Free Size (5.5m)</option>
+                    <option value="blouse">With Blouse Piece</option>
+                </select>
+            </div>
+            <div class="filter-item">
+                <select id="priceFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="all">Price Range: All</option>
+                    <option value="under1500">Under ₹1,500</option>
+                    <option value="1500to2000">₹1,500 - ₹2,000</option>
+                    <option value="above2000">Above ₹2,000</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="sort-group">
+            <i class="fa-solid fa-sliders" style="font-size:12px; color:#555;"></i>
+            <div class="filter-item">
+                <select id="sortFilter" class="filter-select" onchange="applyFilters()">
+                    <option value="popular">Sort: Popularity</option>
+                    <option value="low-high">Price: Low to High</option>
+                    <option value="high-low">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTS CATALOG GRID -->
+    <section class="products-section" id="catalog">
+        <div class="title-wrapper">
+            <h2 class="section-title">Our Saree Collection</h2>
+        </div>
+        <div class="product-grid" id="productGrid">
+
+            <!-- Card 1 -->
+            <div class="product-card" data-category="cotton" data-price="1149">
+                <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=500&q=80" alt="Green Cotton Saree">
+                <div class="product-info">
+                    <div class="product-title">Green Soft Cotton Weave Saree With Zari</div>
+                    <div class="price-wrapper">
+                        <span class="product-price">₹1,149</span>
+                        <span class="old-price">₹2,599</span>
+                        <span class="discount-tag">55% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="product-card" data-category="cotton" data-price="1149">
+                <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=500&q=80" alt="Baby Pink Cotton">
+                <div class="product-info">
+                    <div class="product-title">Baby Pink Soft Cotton Weave Saree</div>
+                    <div class="price-wrapper">
+                        <span class="product-price">₹1,149</span>
+                        <span class="old-price">₹2,599</span>
+                        <span class="discount-tag">55% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="product-card" data-category="silk" data-price="1149">
+                <img src="Aqua-Blue-Embroidered-sare.webp" alt="Aqua Blue Embroidered saree">
+                <div class="product-info">
+                    <div class="product-title">Aqua Blue Embroidered Dola Silk Saree with Stone Work</div>
+                    <div class="price-wrapper">
+                        <span class="product-price">₹1,149</span>
+                        <span class="old-price">₹2,599</span>
+                        <span class="discount-tag">55% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="product-card" data-category="silk" data-price="1249">
+                <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=500&q=80" alt="Blue Banarasi">
+                <div class="product-info">
+                    <div class="product-title">Blue Embellished Banarasi Jacquard Saree</div>
+                    <div class="price-wrapper">
+                        <span class="product-price">₹1,249</span>
+                        <span class="old-price">₹2,899</span>
+                        <span class="discount-tag">56% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 (Fixed Image Link) -->
+            <div class="product-card" data-category="chinon" data-price="1499">
+                <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=500&q=80" alt="Cherry Red Chinon">
+                <div class="product-info">
+                    <div class="product-title">Cherry Red Shaded Soft Chinon Embroidered</div>
+                    <div class="price-wrapper">
+                        <span class="product-price">₹1,499</span>
+                        <span class="old-price">₹4,399</span>
+                        <span class="discount-tag">65% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 (Fixed Broken Image Link) -->
+            <div class="product-card" data-category="ajrakh" data-price="2399">
+                <img src="Yellow-Purple-Banarasi-Saree.webp" alt="Yellow Purple Banarasi Saree">
+                <div class="product-info">
+                    <div class="product-title">Marigold Yellow Tissue Silk Saree with Pearl & Cutdana Embroidery</div>
+                    <div class="price-wrapper">
+                        <span class="product-price">₹2,399</span>
+                        <span class="old-price">₹3,899</span>
+                        <span class="discount-tag">38% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="product-card" data-category="handwork" data-price="1999">
+                <img src="Icy-Blue-image.webp" alt="Silk Saree">
+                <div class="product-info">
+                    <div class="product-title">Icy Blue Ombre Tissue Silk Saree </div>
+                    <div class="price-wrapper">
+                        <span class="product-price">₹1,999</span>
+                        <span class="old-price">₹3,299</span>
+                        <span class="discount-tag">39% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="product-card" data-category="silk" data-price="2399">
+                <img src="image_zoom.jpeg" alt="Pink Soft Silk">
+                <div class="product-info">
+                    <div class="product-title">Multicolor Silk Heavy Thread Embroidred With Sequince Work Saree</div>
+                    <div class="price-wrapper">
+                        <span class="product-price">₹2,399</span>
+                        <span class="old-price">₹4,999</span>
+                        <span class="discount-tag">52% OFF</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>Colours Saree</h3>
+                <p>Welcome to Colours Saree website. Based in Rajkot, we aim to deliver high-quality saree products and traditional elegance to our valued customers.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>CONTACT US</h4>
+                <p><strong>Call:</strong> +91 7779058999</p>
+                <p><strong>WhatsApp:</strong> +91 7779058999</p>
+                <p><strong>Customer Support Time:</strong> 24/7</p>
+                <p><strong>Address:</strong> F-204, Kasturi Kesal 1, Jivraj Park, Nana Mava Road, Rajkot - 360005, Gujarat</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ma Colours Saree. All Rights Reserved.</p>
+            <div class="payment-icons">
+                <i class="fa-brands fa-google-pay"></i>
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE FILTER & SEARCH JAVASCRIPT -->
+    <script>
+        function applyFilters() {
+            const searchVal = document.getElementById('searchInput').value.toLowerCase();
+            const typeVal = document.getElementById('typeFilter').value;
+            const priceVal = document.getElementById('priceFilter').value;
+            const sortVal = document.getElementById('sortFilter').value;
+
+            const grid = document.getElementById('productGrid');
+            const cards = Array.from(grid.getElementsByClassName('product-card'));
+
+            // 1. Filter logic
+            cards.forEach(card => {
+                const title = card.querySelector('.product-title').innerText.toLowerCase();
+                const category = card.getAttribute('data-category');
+                const price = parseInt(card.getAttribute('data-price'));
+
+                let matchesSearch = title.includes(searchVal);
+                let matchesType = (typeVal === 'all') || (category === typeVal);
+                let matchesPrice = true;
+
+                if (priceVal === 'under1500') {
+                    matchesPrice = price < 1500;
+                } else if (priceVal === '1500to2000') {
+                    matchesPrice = price >= 1500 && price <= 2000;
+                } else if (priceVal === 'above2000') {
+                    matchesPrice = price > 2000;
+                }
+
+                if (matchesSearch && matchesType && matchesPrice) {
+                    card.style.display = "";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // 2. Sort logic
+            if (sortVal === 'low-high') {
+                cards.sort((a, b) => parseInt(a.getAttribute('data-price')) - parseInt(b.getAttribute('data-price')));
+            } else if (sortVal === 'high-low') {
+                cards.sort((a, b) => parseInt(b.getAttribute('data-price')) - parseInt(a.getAttribute('data-price')));
+            }
+
+            cards.forEach(card => grid.appendChild(card));
+        }
+
+        function filterByCategory(cat) {
+            document.getElementById('typeFilter').value = cat;
+            applyFilters();
+            document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
